@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="BTL_WEBNC.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Page.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form" runat="server">
+        <!--Phần header -->
+        <!-- 1. Cài đặt logo, thông tin web và thanh tìm kiếm -->
+        <div class="header">
+            <div class="logo">
+                <img src="images/LOGO.png" />
+            </div>
+            <div class="tieuchi">
+                <img src="images/shiper.svg" />
+                <p>
+                    Miễn phí vận chuyển
+                          <br />
+                    Đơn hàng trên <b>1.000.000VNĐ</b>
+                </p>
+
+            </div>
+            <div class="tieuchi">
+                <img src="images/iconcall.svg" />
+                <p>
+                    Đặt hàng ngay
+                          <br />
+                    Gọi ngay: <b>0123456789</b>
+                </p>
+            </div>
+            <div class="timkiem">
+                <div class="username">
+                    <asp:Label ID="lbUsername" runat="server" Text="Tài khoản: "></asp:Label>
+                </div>
+                <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                <asp:ImageButton CssClass="search" ImageUrl="~/images/iconsearch.png" ID="ImageButton1" runat="server" OnClick="ImageButton1_Click" />
+            </div>
+        </div>
+        <!--2. Phần thanh menu -->
+        <div id="menu">
+            <ul>
+                <li><a href="Index.aspx">HOME</a></li>
+                <li><a href="#">GIỚI THIỆU</a></li>
+                <li>
+                    <a href="Child_page.aspx?type=nam">NAM</a>
+
+                </li>
+                <li><a href="Child_page.aspx?type=nu">NỮ</a></li>
+                <li><a href="Child_page.aspx?type=phukien">PHỤ KIỆN</a></li>
+                <li><a href="#">≡</a>
+                    <ul class="sub-menu">
+                        <li>  <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">ĐĂNG XUẤT</asp:LinkButton></li>                      
+                        <li>
+                            <a href="Carts.aspx"><asp:Label ID="txtGiohang" runat="server" Text="GIỎ HÀNG"></asp:Label></a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--Phần hotsale và banner, datalist -->
+        <div class="container">
+            <!--1. Phần bán chạy -->
+            <div class="hotsale">
+                <h3>SẢN PHẨM BÁN CHẠY</h3>
+                <asp:DataList ID="DataList1" runat="server" DataKeyField="iID" RepeatColumns="1">
+                    <ItemTemplate>
+                        <table class="auto-style2">
+                            <tr>
+                                <td>
+                                    <asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("sImage") %>' Width="165px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <asp:Label ID="txtten" runat="server" Text='<%# Eval("sName") %>'></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="txtgia" runat="server" Text='<%# Eval("fPrice") %>'></asp:Label>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <!--2. Phần banner -->
+            <div class="banner">
+                <div class="slideshow-container">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <img src="images/banner/banner1.jpg" style="width: 100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="images/banner/banner2.jpg" style="width: 100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="images/banner/banner3.jpg" style="width: 100%">
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <!--3. Đổ data -->
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!--Phần Footer-->
+        <div class="footer">
+            <div class="label">
+                <p><b>About The Clothing Store</b><br />
+                    Thành viên:<br />
+                    Đỗ Minh Hằng, Tô Thanh Sơn, Vũ Huy Thiện</p>
+            </div>
+            <div class="label">
+                 <p><b>Địa chỉ liên hê:</b><br />
+                    Gmail: theclothingstoreHST.@gmail.com<br />
+                    Số 96 Định Công, Hoàng Mai, Hà Nội</p>
+            </div>
+
+        </div>
+
+    </form>
+    <script src="banner.js"></script>
+</body>
+</html>

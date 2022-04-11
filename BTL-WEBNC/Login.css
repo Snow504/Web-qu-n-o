@@ -1,0 +1,146 @@
+﻿/*Tổng thể*/
+body {
+    font-family: sans-serif;
+    background-image: url(images/imagelogin.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+/*Khung làm việc*/
+.container {
+    width: 380px;
+    margin: 7% auto;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0.15);
+    box-shadow: 0 0 17px #333;
+}
+/*Header login*/
+.header {
+    text-align: center;
+    padding-top: 75px;
+}
+
+    .header h1 {
+        color: #ddd;
+        font-size: 45px;
+        margin-bottom: 80px;
+    }
+/*Phần đăng ký- đăng nhập*/
+.main {
+    text-align: center;
+}
+
+    .main input, button {
+        width: 300px;
+        height: 40px;
+        border: none;
+        outline: none;
+        padding-left: 40px;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    .main .button {
+        padding-left: 0;
+        background-color: darkslateblue;
+        letter-spacing: 1px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color:#ddd;
+    }
+
+        .main .button:hover {
+            box-shadow: 2px 2px 5px #555;
+            background-color: darkblue;
+        }
+
+    .main .smallbutton {
+        width: 150px;
+        padding-left: 0;
+        background-color: darkslateblue;
+        letter-spacing: 1px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+        .main .smallbutton:hover {
+            box-shadow: 2px 2px 5px #555;
+            background-color: darkblue;
+        }
+
+    .main input:hover {
+        box-shadow: 2px 2px 5px #555;
+        background-color: #ddd;
+    }
+
+    .main span {
+        position: relative;
+    }
+
+    .main i {
+        position: absolute;
+        left: 15px;
+        color: #333;
+        font-size: 16px;
+        top: 2px;
+    }
+
+    .main span a {
+        font-style: italic;
+        color: darkslateblue;
+    }
+
+    .main a:hover {
+        color: #333;
+        text-shadow: 1px 0px 3px black;
+    }
+/* Phần hiện Box -The Modal (background) */
+.main .modal {
+    display: none; /* mặc định được ẩn đi */
+    position: fixed; /* vị trí cố định */
+    z-index: 1; /* Ưu tiên hiển thị trên cùng */
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+/* Nội dung Box-Modal Content */
+.main .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 25px;
+}
+.main .modal-content h2 {
+    color: #333;
+}
+.main .modal-content .tinybutton {
+    width: 120px;
+    height: 50px;
+    background-color: darkslateblue;
+    font-weight: bold;
+    margin: 30px;
+    padding:0px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #ddd;
+    text-align:center;
+}
+.main .modal-content .tinybutton:hover {
+        box-shadow: 2px 2px 5px #555;
+        background-color: darkblue;
+        color: #ddd;
+        border-radius: 10px;
+    }
